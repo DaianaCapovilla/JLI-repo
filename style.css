@@ -1,0 +1,650 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+
+@font-face {
+    font-family: 'Inkburro'; /* Nombre que usarás en CSS */
+    src: url('fonts/Inkburro.TTF') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* { 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    /* outline: 1px solid red;  */
+    /* debug */
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Navbar */
+.navbar {
+    position: fixed;
+    top: 16px;
+    right: 16px;
+    left: 0;
+    width: 100%;
+    background: transparent;
+    color: #F8FAFA;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+  }
+  
+  /* Menú desktop */
+  .menu {
+    list-style: none;
+    display: flex;
+    gap: 24px;
+    background: #F8FAFA;
+    border-radius: 50px;
+    padding: 20px 6px;
+    align-items: center;
+  }
+  
+  .menu a {
+    color: #0D0E10;
+    font-size: 16px;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 8px 16px;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+  }
+  
+  .menu li:last-child a {
+    background-color: #0D0E10;
+    color: #F8FAFA;
+    border-radius: 100px;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 16px 24px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    border: none;
+    cursor: pointer;
+  }
+  
+  .menu li:not(:last-child) a:hover {
+    background: #f2f2f2;
+  }
+  
+  /* Menu hamburguesa */
+  .menu-icon {
+    display: none;
+    width: 42px;
+    height: 42px;
+    background-color: #F8FAFA;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+  
+  .menu-icon i {
+    font-size: 26px;
+    color: #0D0E10;
+  }
+  
+  /* Checkbox oculto */
+  #menu-toggle {
+    display: none;
+  }
+  
+  /* Drawer oculto en desktop */
+  .drawer {
+    display: none;
+  }
+  
+  /* ===== 📱 Responsive ===== */
+  @media (max-width: 768px) {
+    .navbar {
+      justify-content: flex-end;
+      padding: 8px 20px;
+    }
+  
+    .menu {
+      display: none;
+    }
+  
+    .menu-icon {
+      display: flex;
+    }
+  
+    /* Drawer mobile */
+    .drawer {
+      display: flex;
+      position: fixed;     
+      top: 0;
+      right: 0;
+      height: 100vh;
+      width: 70%;
+      max-width: 300px;
+      background: #F8FAFA;
+      transform: translateX(100%);
+      transition: transform 0.4s ease;
+      z-index: 1000;        
+      flex-direction: column;
+    }
+  
+    #menu-toggle:checked + .menu-icon + .menu + .drawer {
+      transform: translateX(0);
+    }
+  
+    .close-btn {
+      font-size: 28px;
+      color: #0D0E10;
+      cursor: pointer;
+      align-self: flex-end;
+      padding: 14px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  
+    .close-btn i {
+      font-size: 28px;
+    }
+  
+    .menu-mobile {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 30px;
+      padding: 40px 20px;
+    }
+  
+    .menu-mobile li {
+      width: 100%;
+    }
+  
+    .menu-mobile li:last-child {
+      align-self: stretch;
+    }
+  
+    .menu-mobile a {
+      font-size: 16px;
+      color: #0D0E10;
+      text-decoration: none;
+    }
+  
+    .menu-mobile li:last-child a {
+      display: block;
+      width: 100%;
+      box-sizing: border-box;
+      text-align: center;
+      padding: 12px 20px;
+      background-color: #0D0E10;
+      color: #F8FAFA;
+      border-radius: 100px;
+      font-weight: 500;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+  }
+
+/* === HERO GENERAL === */
+#hero {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+  }
+  
+  /* === CARRUSEL DE FONDO === */
+  #heroCarousel {
+    height: 100%;
+  }
+  
+  #heroCarousel .carousel-inner,
+  #heroCarousel .carousel-item,
+  #heroCarousel img {
+    height: 100%;
+  }
+  
+  #heroCarousel img {
+    object-fit: cover;
+    width: 100%;
+  }
+  
+/* === CAPA SUPERIOR (CONTENIDO CON GLASS) === */
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* padding lateral fluido: mínimo 16px, ideal 8vw, máximo 80px */
+    padding: 0 clamp(16px, 8vw, 80px);
+    z-index: 2;
+    text-align: center;
+}
+  
+/* === GLASS EFFECT === */
+.glass-effect {
+    background: rgba(13, 14, 16, 0.20);
+    border-radius: clamp(16px, 4vw, 32px); 
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    border: 1px solid rgba(125, 125, 125, 0.3);
+    width: 100%;
+    padding: clamp(16px, 5vw, 48px);
+  }
+  
+  /* === CONTENIDO INTERNO === */
+  .hero-logo {
+    display: block;
+    margin: 0 auto 2rem;
+    width: 100%;
+    max-width: 400px;
+    min-width: 150px;
+    height: auto;
+  }
+  
+  .h1-JLI {
+    font-size: clamp(1.2rem, 5vw, 2.5rem);
+    font-weight: 700;
+    color: #F8FAFA;
+  }
+  
+  .btn-JLI-secondary {
+    display: inline-block;
+    background-color: #F8FAFA;
+    color: #0D0E10;
+    border-radius: 100px;
+    text-decoration: none;
+    font-size: clamp(1rem, 2.5vw, 1.125rem);
+    font-weight: 600;
+    padding: 12px 24px;
+    margin-top: 16px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    border: none;
+    cursor: pointer;
+  }
+  
+  .btn-JLI-secondary:hover {
+    background-color: #e6e6e6;
+}
+
+#catalogo {
+    padding-left: 80px;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    background-color: #F8FAFA;
+}
+
+.p-catalogo-JLI {
+    color: #282728;
+    font-family: "Plus Jakarta Sans";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.JLI-list-item {
+    color: #0D0E10;
+    list-style: none;
+    font-family: "Plus Jakarta Sans";
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+/* Tabs no activas */
+#catalogoTabs .nav-link {
+    color: #4F5052;
+    transition: color 0.3s;
+    position: relative;
+    padding-left: 24px; 
+}
+
+/* Tab activa */
+#catalogoTabs .nav-link.active {
+    color: #282728;
+    font-weight: 500;
+}
+
+#catalogoTabs .nav-link.active::before {
+    content: "•";               
+    position: absolute;
+    left: 0;                    
+    top: 50%;
+    transform: translateY(-50%); 
+    color: #282728;            
+    font-size: 18px;            
+    font-weight: 500;
+}
+
+#catalogoTabs .nav-link:not(.active):hover {
+    color: #282728;
+    font-weight: 500;
+}
+
+
+.carousel-row {
+    display: flex;
+    flex-wrap: nowrap; 
+    justify-content: flex-start;
+    gap: 24px;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    top: calc(50% - 20px); /* resta la mitad del cuadrado de la flecha */
+    transform: translateY(-50%);  bottom: auto;             /* evita que quede pegado al borde */
+    height: 40px;             /* mismo alto que el cuadrado del ícono */
+    width: 40px;              /* opcional: ajusta ancho para clic */
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: black;       /* cuadrado negro */
+  width: 40px;                   /* ancho del cuadrado */
+  height: 40px;                  /* alto del cuadrado */
+  background-size: 50% 50%;      /* tamaño de la flecha */
+  background-position: center;   /* flecha centrada */
+  background-repeat: no-repeat;  /* evita repeticiones */
+}
+
+
+.img-tab-JLI {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+}
+
+.figcaption-JLI {
+    padding-top: 8px;
+}
+
+#sobre-mi {
+    padding: 100px 80px;
+}
+
+.title-ink {
+    font-family: 'Inkburro', 'Plus Jakarta Sans', sans-serif;
+    font-size: clamp(32px, 8vw, 80px);
+    margin-bottom: 0px;
+    color: #4F5052;
+}
+
+.p-sobremi {
+    font-size: clamp(14px, 2.5vw, 16px);
+    margin-bottom: 0;
+    color: #282728;
+}
+
+#coleccionImaginatu {
+    padding: 100px 80px;
+}
+
+.p-imaginatu {
+    font-family: "Plus Jakarta Sans";
+    font-size: clamp(14px, 2.5vw, 16px);
+    color: #282728;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 32px;
+    letter-spacing: 0.32px;
+}
+
+.btn-JLI-terciary {
+    font-family: "Plus Jakarta Sans";
+    background-color: transparent;
+    border: none; 
+    box-shadow: none; 
+    outline: none; 
+    padding: 0; 
+    color: #0D0E10; 
+    font-size: clamp(14px, 2.5vw, 16px);
+    font-style: normal;
+    font-weight: 500;
+    text-decoration: underline;
+}
+
+#coleccionAbstraktua {
+    padding: 100px 0px;
+}
+
+.p-subtitle {
+    font-family: "Plus Jakarta Sans";
+    text-transform: uppercase;
+    color: #4F5052;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    letter-spacing: 1px;
+}
+
+.abstraktua-row {
+    overflow: hidden;
+    margin: 24px 0px;
+}
+
+.abstraktua-img {
+    width: 350px;
+    height: 350px;
+    object-fit: cover; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.abstraktua-img:hover {
+    cursor: pointer;
+}
+
+#colecciones {
+    padding: 100px 80px;
+  }
+  
+  .row-colecciones {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 64px;
+    padding-top: 56px;
+  }
+  
+  .colecciones-title {
+    font-family: "Plus Jakarta Sans";
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 200;
+    line-height: normal;
+  }
+  
+  .img-wrapper {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    overflow: hidden;
+  }
+  
+  .img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  
+  /* Borde interno */
+  .img-wrapper::after {
+    content: "";
+    position: absolute;
+    top: 32px;
+    left: 32px;
+    right: 32px;
+    bottom: 32px;
+    border: 1px solid #F8FAFA;
+    pointer-events: none;
+  }
+  
+
+  .h2-colecciones-title {
+    margin-top: 24px;
+    color: #0D0E10;
+    font-family: 'Inkburro', 'Plus Jakarta Sans', sans-serif;
+    font-size: 48px;
+  }
+  
+  figcaption p {
+    font-size: 16px;
+    margin-bottom: 16px;
+  }
+  
+
+#footer {
+    padding: 100px 80px;
+    background-color: #0D0E10; 
+    color: #F8FAFA;
+}
+
+.formasdecontacto {
+    padding-left: 80px;
+}
+
+.links-redes {
+    text-decoration: none;
+    color: #F8FAFA;
+    font-family: "Plus Jakarta Sans";
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.ul-contacto {
+    list-style: none;
+    padding: 0px;
+}
+
+/* Imaginatu HTML */
+
+/* .banner-colecciones {
+    background-color: #0D0E10;
+    color: #F8FAFA;
+    padding: 0px 80px;
+    display: flex;
+    align-items: center;   
+    justify-content: center; 
+    gap: 40px;
+} */
+
+#hero-section-imaginatu {    
+    background-image: url("imagenes/coleccionimaginatu/Collar\ Medusen\ -\ Plata\ 925.jpg");
+    background-size: cover;
+    background-position: center;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    padding: 80px;
+}
+
+/* Filtro */
+
+.contenedor-filtro {
+    padding: 80px;
+    margin: 0px;
+}
+
+/* Tarjetas de producto */
+.product {
+    text-align: start;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    height: 100%; 
+}
+
+.product:hover {
+    transform: translateY(-4px); 
+    scale: 1.0;
+    cursor: pointer;
+}
+
+.product img {
+    width: 100%;        
+    aspect-ratio: 1 / 1; 
+    object-fit: cover;    
+    margin-bottom: 16px;
+}
+
+.product h5 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.product p {
+    font-size: 0.9rem;
+    color: #4F5052;
+    margin-bottom: 0;
+}
+
+/* Back to top */
+
+#back-to-top {
+    position: fixed; 
+    bottom: 20px; 
+    right: 20px; 
+    background-color: #0D0E10;
+    color: #F8FAFA;
+    border-radius: 50%; 
+    width: 50px; 
+    height: 50px; 
+    text-align: center; 
+    line-height: 50px; 
+    /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);  */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#back-to-top p {
+    font-family: 'Plus Jakarta Sans';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 16px;
+}
+
+#back-to-top a {
+    text-decoration: none; 
+    color: #F8FAFA;
+}
+
+#back-to-top:hover {
+    background-color: #0D0E10;
+}  
+
+.whatsapp-float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 20px;
+    right: 20px;
+    background-color: #282728;
+    color: #F8FAFA;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 32px;
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  .whatsapp-float:hover {
+    transform: scale(1.1);
+    color: white;
+  }
+  
