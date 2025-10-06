@@ -273,13 +273,7 @@ html {
     background-color: #e6e6e6;
 }
 
-/* CATALOGO */
-
-#catalogo-JLI {
-    padding: 100px 80px;
-    background-color: #F8FAFA;
-    text-align: center;
-}
+/* CATALOGO *
 
 /* #catalogo {
     padding-left: 80px;
@@ -359,6 +353,12 @@ html {
   background-position: center;  
   background-repeat: no-repeat;  
 } */
+
+#catalogo-JLI {
+  padding: 100px 80px;
+  background-color: #F8FAFA;
+  text-align: center;
+}
 
 .img-tab-JLI {
   height: 300px;
