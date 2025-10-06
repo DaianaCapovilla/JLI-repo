@@ -370,20 +370,20 @@ html {
 }
 
 .title-ink {
-    font-family: 'Inkburro', 'Plus Jakarta Sans', sans-serif;
-    font-size: clamp(32px, 8vw, 80px);
-    margin-bottom: 0px;
-    color: #4F5052;
+  font-family: 'Inkburro', 'Plus Jakarta Sans', sans-serif;
+  font-size: clamp(32px, 8vw, 80px);
+  margin-bottom: 0px;
+  color: #4F5052;
 }
 
 .p-sobremi {
-    font-size: clamp(14px, 2.5vw, 16px);
-    margin-bottom: 0;
-    color: #282728;
+  font-size: clamp(14px, 2.5vw, 16px);
+  margin-bottom: 0;
+  color: #282728;
 }
 
 #coleccionImaginatu {
-    padding: 100px 80px;
+  padding: 100px 80px;
 }
 
 .p-imaginatu {
@@ -415,14 +415,14 @@ html {
 }
 
 .p-subtitle {
-    font-family: "Plus Jakarta Sans";
-    text-transform: uppercase;
-    color: #4F5052;
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 300;
-    line-height: normal;
-    letter-spacing: 1px;
+  font-family: "Plus Jakarta Sans";
+  text-transform: uppercase;
+  color: #4F5052;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  letter-spacing: 1px;
 }
 
 .abstraktua-row {
@@ -456,7 +456,7 @@ html {
   
   .colecciones-title {
     font-family: "Plus Jakarta Sans";
-    font-size: 48px;
+    font-size: clamp(2rem, 5vw, 3rem);
     font-style: normal;
     font-weight: 200;
     line-height: normal;
@@ -502,55 +502,75 @@ html {
   }
   
 
+
+/* Footer */
 #footer {
-    padding: 100px 80px;
-    background-color: #0D0E10; 
-    color: #F8FAFA;
+  background-image: url(imagenes/hero-images/collar-tide.jpg);
+  background-size: cover;
+  background-position: center;
+  color: #F8FAFA;          
+  padding: 100px 0; /* solo arriba y abajo */
 }
 
-.formasdecontacto {
-    padding-left: 80px;
+/* Glass effect */
+.glass-effect-footer {
+  background: rgba(13, 14, 16, 0.20);
+  border-radius: clamp(16px, 4vw, 32px); 
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border: 1px solid rgba(125, 125, 125, 0.3);
+  width: 100%;
+  padding: clamp(16px, 5vw, 80px);
+  padding: 40px; 
+  width: 100%;
 }
 
-.links-redes {
-    text-decoration: none;
-    color: #F8FAFA;
-    font-family: "Plus Jakarta Sans";
-    font-size: 24px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
+/* Responsive padding */
+@media (max-width: 768px) {
+  .glass-effect {
+    padding: 30px 20px;
+  }
+}
+
+.contacto-title {
+  font-family: "Plus Jakarta Sans";
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 200;
+  line-height: normal;
 }
 
 .ul-contacto {
-    list-style: none;
-    padding: 0px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
-/* Imaginatu HTML */
-
-/* .banner-colecciones {
-    background-color: #0D0E10;
-    color: #F8FAFA;
-    padding: 0px 80px;
-    display: flex;
-    align-items: center;   
-    justify-content: center; 
-    gap: 40px;
-} */
-
-#hero-section-imaginatu {    
-    background-image: url("imagenes/coleccionimaginatu/Collar\ Medusen\ -\ Plata\ 925.jpg");
-    background-size: cover;
-    background-position: center;
-    height: auto;
-    display: flex;
-    justify-content: center;
-    align-items: start;
-    padding: 80px;
+.links-redes {
+  text-decoration: none;
+  color: #F8FAFA;
+  font-family: "Plus Jakarta Sans";
+  font-size: 20px;
+  font-weight: 600;
+  line-height: normal;
 }
 
-/* Filtro */
+.ul-contacto figure {
+  margin: 0;
+}
+
+.ul-contacto img {
+  width: 24px;
+  height: auto;
+}
+
+.ul-contacto li {
+  margin-bottom: 12px;
+}
+
+
+
+/* CSS DE COLECCIONES - Filtro */
 
 .contenedor-filtro {
     padding: 80px;
@@ -591,7 +611,7 @@ html {
 
 /* Back to top */
 
-#back-to-top {
+/* #back-to-top {
     position: fixed; 
     bottom: 20px; 
     right: 20px; 
@@ -602,7 +622,6 @@ html {
     height: 50px; 
     text-align: center; 
     line-height: 50px; 
-    /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);  */
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
@@ -621,7 +640,9 @@ html {
 
 #back-to-top:hover {
     background-color: #0D0E10;
-}  
+}   */
+
+/* Whatsapp */
 
 .whatsapp-float {
     position: fixed;
