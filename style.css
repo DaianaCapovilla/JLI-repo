@@ -273,7 +273,15 @@ html {
     background-color: #e6e6e6;
 }
 
-#catalogo {
+/* CATALOGO */
+
+#catalogo-JLI {
+    padding: 100px 80px;
+    background-color: #F8FAFA;
+    text-align: center;
+}
+
+/* #catalogo {
     padding-left: 80px;
     padding-top: 100px;
     padding-bottom: 100px;
@@ -299,7 +307,6 @@ html {
     line-height: normal;
 }
 
-/* Tabs no activas */
 #catalogoTabs .nav-link {
     color: #4F5052;
     transition: color 0.3s;
@@ -307,7 +314,6 @@ html {
     padding-left: 24px; 
 }
 
-/* Tab activa */
 #catalogoTabs .nav-link.active {
     color: #282728;
     font-weight: 500;
@@ -329,7 +335,6 @@ html {
     font-weight: 500;
 }
 
-
 .carousel-row {
     display: flex;
     flex-wrap: nowrap; 
@@ -339,30 +344,37 @@ html {
 
 .carousel-control-prev,
 .carousel-control-next {
-    top: calc(50% - 20px); /* resta la mitad del cuadrado de la flecha */
-    transform: translateY(-50%);  bottom: auto;             /* evita que quede pegado al borde */
-    height: 40px;             /* mismo alto que el cuadrado del ícono */
-    width: 40px;              /* opcional: ajusta ancho para clic */
+    top: calc(50% - 20px); 
+    transform: translateY(-50%);  bottom: auto;            
+    height: 40px;             
+    width: 40px;              
 }
 
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
-  background-color: black;       /* cuadrado negro */
-  width: 40px;                   /* ancho del cuadrado */
-  height: 40px;                  /* alto del cuadrado */
-  background-size: 50% 50%;      /* tamaño de la flecha */
-  background-position: center;   /* flecha centrada */
-  background-repeat: no-repeat;  /* evita repeticiones */
-}
+  background-color: black;       
+  width: 40px;                 
+  height: 40px;                  
+  background-size: 50% 50%;    
+  background-position: center;  
+  background-repeat: no-repeat;  
+} */
 
 .img-tab-JLI {
-    width: 300px;
-    height: 300px;
-    object-fit: cover;
+  height: 300px;
+  object-fit: cover;
+}
+
+.galeria-item {
+  text-decoration: none;
+  color: #0D0E10;
 }
 
 .figcaption-JLI {
     padding-top: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    text-transform: uppercase;
 }
 
 #sobre-mi {
