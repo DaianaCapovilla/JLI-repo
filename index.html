@@ -12,6 +12,7 @@
 </head>
 <body>
 
+  <header>
     <nav class="navbar">
       <input type="checkbox" id="menu-toggle">
       <label for="menu-toggle" class="menu-icon">
@@ -41,6 +42,10 @@
       </div>
     </nav>
 
+  </header>
+    
+        <!-- me falta agregar una etiqueta header que contenga la nav y me falta agregar la etiqueta main que contenga el contenido del sitio el hero, deberia estar adentro de la etiqueta main, el orden seria main, section -->
+
     <section id="hero">
       <div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="4000">
         <div class="carousel-inner">
@@ -64,9 +69,13 @@
     
       <div class="hero-overlay">
         <div class="glass-effect">
-          <img src="imagenes/joseluisibar-logo.png" alt="Logo José Luis Ibar" class="hero-logo">
-          <h1 class="h1-JLI">Descubrí todas las <br>colecciones</h1>
-          <a class="btn-JLI-secondary" aria-current="page" href="#coleccionAbstraktua">Ver todo</a>
+          <figure>
+            <img src="imagenes/joseluisibar-logo.png" alt="Logo José Luis Ibar" class="hero-logo">
+          </figure>
+          <div>
+            <h1 class="h1-JLI">Descubrí todas las <br>colecciones</h1>
+            <a class="btn-JLI-secondary" aria-current="page" href="#coleccionAbstraktua">Ver todo</a>
+          </div>
         </div>
       </div>
     </section>
@@ -795,7 +804,7 @@
 
     <footer id="footer">
       <div class="container">
-        <div class="glass-effect-footer mx-auto d-flex flex-column flex-md-row align-items-center justify-content-between">
+        <div class="glass-effect-footer mx-auto d-flex flex-column flex-md-row align-items-center justify-content-between g-5">
           
           <!-- Información de contacto -->
           <div class="col-12 col-md-6 mb-4 mb-md-0">
@@ -804,7 +813,7 @@
             <ul class="ul-contacto list-unstyled">
               <li class="d-flex gap-3 align-items-center mb-2">
                 <figure class="mb-0">
-                  <img src="imagenes/redes/instagram 1.png" alt="instagram" class="img-fluid">
+                  <img src="imagenes/redes/instagram.png" alt="instagram" class="img-fluid">
                 </figure>
                 <a href="https://www.instagram.com/ibarjoseluis/?hl=es" target="_blank" class="links-redes">instagram.com/ibarjoseluis</a>
               </li>

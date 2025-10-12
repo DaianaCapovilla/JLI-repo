@@ -240,7 +240,7 @@ html {
   /* === CONTENIDO INTERNO === */
   .hero-logo {
     display: block;
-    margin: 0 auto 2rem;
+    margin: 0 auto 0;
     width: 100%;
     max-width: 400px;
     min-width: 150px;
@@ -569,6 +569,7 @@ html {
 
 .ul-contacto figure {
   margin: 0;
+  padding: 0;
 }
 
 .ul-contacto img {
