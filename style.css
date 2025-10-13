@@ -677,22 +677,21 @@ html {
 
 .modal-image {
   flex: 0 0 55%; /* Fija el ancho del contenedor de la imagen al 55% del modal */
-  aspect-ratio: 1 / 1; /* Fuerza al contenedor a ser un cuadrado perfecto */
+  aspect-ratio: 1 / 1; 
   display: flex;
-  justify-content: center; /* Centra la imagen horizontalmente */
-  align-items: center;     /* Centra la imagen verticalmente */
-  overflow: hidden;        /* Oculta cualquier parte de la imagen que pudiera salirse */
-  padding: 1rem;           /* Añade un poco de espacio interno */
-  background-color: #f8f9fa; /* Color de fondo opcional para el área vacía */
+  justify-content: center; 
+  align-items: center;     
+  overflow: hidden;        
+  padding: 1rem;          
+  background-color: #f8f9fa; 
 }
 
-/* Asegura que la imagen se ajuste dentro del nuevo contenedor cuadrado */
 #modalImage {
   max-width: 100%;
   max-height: 100%;
-  object-fit: contain; /* Mantiene la proporción de la imagen sin recortarla */
+  object-fit: contain;
 }
 
-.modal-info {
-  padding-right: 64px;
+.modal-content {
+  overflow: hidden;
 }
