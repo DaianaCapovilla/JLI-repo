@@ -11,36 +11,39 @@
     <link rel="icon" type="image/png" href="imagenes/JLI-favicon.png">
 </head>
 <body>
-    <nav class="navbar">
-        <!-- Checkbox hack -->
-        <input type="checkbox" id="menu-toggle">
-        <label for="menu-toggle" class="menu-icon">
-          <i class="bi bi-list"></i>
-        </label>
-  
-        <!-- Menú visible en desktop -->
-        <ul class="menu">
-            <li><a href="index.html">Inicio</a></li>
-            <li><a href="colecciones.html">Catálogo</a></li>
-            <li><a href="index.html#sobre-mi">Sobre mí</a></li>
-            <li><a href="colecciones.html">Colecciones</a></li>
-            <li><a href="#footer">Contacto</a></li>
-        </ul>
-  
-        <!-- Drawer para mobile -->
-        <div class="drawer">
-          <label for="menu-toggle" class="close-btn">
-            <i class="bi bi-x-lg"></i>
-          </label>
-  
-          <ul class="menu-mobile">
-            <li><a href="#">Catálogo</a></li>
-            <li><a href="#">Sobre mí</a></li>
-            <li><a href="#">Colecciones</a></li>
-            <li><a href="#footer">Contacto</a></li>
-          </ul>
-        </div>
-    </nav>
+    <header>
+        <nav class="navbar">
+            <!-- Checkbox hack -->
+            <input type="checkbox" id="menu-toggle">
+            <label for="menu-toggle" class="menu-icon">
+              <i class="bi bi-list"></i>
+            </label>
+      
+            <!-- Menú visible en desktop -->
+            <ul class="menu">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="colecciones.html">Catálogo</a></li>
+                <li><a href="index.html#sobre-mi">Sobre mí</a></li>
+                <li><a href="colecciones.html">Colecciones</a></li>
+                <li><a href="#footer">Contacto</a></li>
+            </ul>
+      
+            <!-- Drawer para mobile -->
+            <div class="drawer">
+              <label for="menu-toggle" class="close-btn">
+                <i class="bi bi-x-lg"></i>
+              </label>
+      
+              <ul class="menu-mobile">
+                <li><a href="#">Catálogo</a></li>
+                <li><a href="#">Sobre mí</a></li>
+                <li><a href="#">Colecciones</a></li>
+                <li><a href="#footer">Contacto</a></li>
+              </ul>
+            </div>
+        </nav>
+    </header>
+    
     
     <!-- me falta agregar una etiqueta header que contenga la nav y me falta agregar la etiqueta main que contenga el contenido del sitio -->
 
@@ -67,11 +70,15 @@
     
     <div class="hero-overlay">
         <div class="glass-effect">
-        <a href="index.html">
-            <img src="imagenes/joseluisibar-logo.png" alt="Logo José Luis Ibar" class="hero-logo">
-        </a>
-        <h1 class="h1-JLI">Descubrí todas las <br>colecciones</h1>
-        <a class="btn-JLI-secondary" aria-current="page" href="#coleccionAbstraktua">Ver todo</a>
+            <figure>
+                <a href="index.html">
+                    <img src="imagenes/joseluisibar-logo.png" alt="Logo José Luis Ibar" class="hero-logo">
+                </a>
+            </figure>
+            <div>
+                <h1 class="h1-JLI">Descubrí todas las <br>colecciones</h1>
+                <a class="btn-JLI-secondary" aria-current="page" href="#coleccionAbstraktua">Ver todo</a>
+            </div>
         </div>
     </div>
     </section>
@@ -732,7 +739,7 @@
 
     <footer id="footer">
         <div class="container">
-          <div class="glass-effect-footer mx-auto d-flex flex-column flex-md-row align-items-center justify-content-between">
+          <div class="glass-effect-footer mx-auto d-flex flex-column flex-md-row align-items-center justify-content-between gap-4">
             
             <!-- Información de contacto -->
             <div class="col-12 col-md-6 mb-4 mb-md-0">
@@ -741,7 +748,7 @@
               <ul class="ul-contacto list-unstyled">
                 <li class="d-flex gap-3 align-items-center mb-2">
                   <figure class="mb-0">
-                    <img src="imagenes/redes/instagram 1.png" alt="instagram" class="img-fluid">
+                    <img src="imagenes/redes/instagram.png" alt="instagram" class="img-fluid">
                   </figure>
                   <a href="https://www.instagram.com/ibarjoseluis/?hl=es" target="_blank" class="links-redes">instagram.com/ibarjoseluis</a>
                 </li>
