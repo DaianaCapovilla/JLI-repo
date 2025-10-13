@@ -438,6 +438,7 @@ html {
 
 .abstraktua-row {
     overflow: hidden;
+    gap: 24px;
     margin: 24px 0px;
 }
 
@@ -578,47 +579,6 @@ html {
   margin-bottom: 12px;
 }
 
-
-
-/* CSS DE COLECCIONES - Filtro */
-
-.contenedor-filtro {
-    padding: 80px;
-    margin: 0px;
-}
-
-/* Tarjetas de producto */
-.product {
-    text-align: start;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-    height: 100%; 
-}
-
-.product:hover {
-    transform: translateY(-4px); 
-    scale: 1.0;
-    cursor: pointer;
-}
-
-.product img {
-    width: 100%;        
-    aspect-ratio: 1 / 1; 
-    object-fit: cover;    
-    margin-bottom: 16px;
-}
-
-.product h5 {
-    font-size: 1rem;
-    font-weight: 600;
-    margin-bottom: 4px;
-}
-
-.product p {
-    font-size: 0.9rem;
-    color: #4F5052;
-    margin-bottom: 0;
-}
-
 /* Whatsapp */
 
 .whatsapp-float {
@@ -645,3 +605,86 @@ html {
     color: white;
   }
   
+/* CSS DE COLECCIONES - Filtro */
+
+.contenedor-filtro {
+  padding: 80px;
+  margin: 0px;
+}
+
+/* Tarjetas de producto */
+.product {
+  text-align: start;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  height: 100%; 
+}
+
+.product:hover {
+  transform: translateY(-4px); 
+  scale: 1.0;
+  cursor: pointer;
+}
+
+.product img {
+  width: 100%;        
+  aspect-ratio: 1 / 1; 
+  object-fit: cover;    
+  margin-bottom: 16px;
+}
+
+.product h5 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.product p {
+  font-size: 0.9rem;
+  color: #4F5052;
+  margin-bottom: 0;
+}
+
+
+/* CSS de Imaginatu  */
+
+#hero-coleccion {
+  height: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: clamp(16px, 4vw, 48px);
+  padding-left: clamp(16px, 8vw, 80px);
+  padding-right: clamp(16px, 8vw, 80px);
+  background-color: #0D0E10;
+  color: #F8FAFA;
+}
+
+/* Modal */
+.modal-body {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  gap: 48px;
+}
+
+@media (min-width: 768px) {
+  .modal-body {
+      flex-direction: row;
+  }
+}
+
+.modal-image {
+  max-height: 80vh; /* Evita que la imagen supere el alto de la ventana */
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  overflow: hidden;
+}
+
+.modal-image img {
+  object-fit: contain; /* Mantiene la proporción de la imagen */
+}
+
+.modal-info {
+  padding-right: 64px;
+}
