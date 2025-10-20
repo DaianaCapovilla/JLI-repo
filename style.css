@@ -746,3 +746,88 @@ html {
 .modal-content {
   overflow: hidden;
 }
+
+
+/* --- Estilos para el Carrusel/Banner --- */
+
+/* 1. Estilo base para cada slide */
+#hero-banner-carousel .carousel-item {
+  height: 50vh;
+  min-height: 500px; /* Altura mínima por si la pantalla es muy ancha y poco alta */
+  
+  /* Imagen de fondo */
+  background-size: cover;
+  background-position: center;  
+  background-repeat: no-repeat;
+}
+
+/* 2. Imágenes de fondo a cada slide */
+#slide-imaginatu {
+  background-image: url('../imagenes/hero-images/collar-arabesque.jpg');
+}
+
+#slide-trazua {
+  background-image: url('../imagenes/hero-images/colgante-cr.jpg');
+}
+
+#slide-itsasoa {
+  background-image: url('../imagenes/hero-images/collar-oskol.jpg');
+}
+
+#slide-nordikoa {
+  background-image: url('../imagenes/hero-images/colgante-tropical.jpg');
+}
+
+/* 3. Estilos para el texto */
+#hero-banner-carousel .carousel-caption {
+  top: 50%;
+  transform: translateY(-50%);
+  bottom: auto;
+  
+  /* Glass */
+  background: rgba(13, 14, 16, 0.65);
+  border-radius: clamp(16px, 4vw, 32px); 
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border: 1px solid rgba(125, 125, 125, 0.3);
+  gap: clamp(16px, 4vw, 48px);
+  padding: clamp(32px, 4vw, 48px);
+}
+
+/* 4. Estilos para los textos (opcional, pero recomendado) */
+#hero-banner-carousel .carousel-caption h2 {
+  font-family: 'inkburro', 'Plus Jakarta Sans', sans-serif;
+  font-size: 5rem;
+  font-weight: 400;
+}
+
+#hero-banner-carousel .carousel-caption p {
+  font-size: 1.2rem; /* Tamaño del párrafo */
+  max-width: 600px;
+  margin: 1rem auto 0; /* Centra el párrafo */
+}
+
+
+/* --- Ajustes para Móviles (Responsive) --- */
+@media (max-width: 768px) {
+  #hero-banner-carousel .carousel-item {
+    height: 50vh;
+    min-height: 400px;
+  }
+  
+  #hero-banner-carousel .carousel-caption {
+    /* Ajustamos el padding y el ancho para pantallas pequeñas */
+    padding: 2rem;
+    width: 90%; /* Evita que el texto toque los bordes */
+    left: 5%;
+  }
+
+  #hero-banner-carousel .carousel-caption h2 {
+    font-size: 3.5rem; /* Título más pequeño en móvil */
+  }
+  
+  #hero-banner-carousel .carousel-caption p {
+    font-size: 1rem; /* Párrafo más pequeño en móvil */
+  }
+}
