@@ -23,34 +23,101 @@
 <body>
     <header>
         <nav class="navbar">
-            <!-- Checkbox hack -->
-            <input type="checkbox" id="menu-toggle">
-            <label for="menu-toggle" class="menu-icon">
-              <i class="bi bi-list"></i>
+          <input type="checkbox" id="menu-toggle">
+          <label for="menu-toggle" class="menu-icon">
+            <i class="bi bi-list"></i>
+          </label>
+      
+          <ul class="menu">
+            <li><a href="index.html">Inicio</a></li>
+
+              <li class="nav-item dropdown">
+                <a href="#" class="dropdown-toggle active" role="button" data-bs-toggle="dropdown" aria-expanded="false">Catálogo</a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Pulseras</a></li>
+                  <li><a class="dropdown-item" href="#">Anillos</a></li>
+                  <li><a class="dropdown-item" href="#">Collares</a></li>
+                  <li><a class="dropdown-item" href="#">Pendientes</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="colecciones.html">Ver todo</a></li>
+                </ul>
+              </li>
+              <li><a href="#sobre-mi">Sobre mí</a></li>
+              <li class="nav-item dropdown">
+                <a href="#" class="dropdown-toggle active" role="button" data-bs-toggle="dropdown" aria-expanded="false">Colecciones</a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Itsasoa</a></li>
+                  <li><a class="dropdown-item" href="#">Trazua</a></li>
+                  <li><a class="dropdown-item" href="imaginatu.html">Imaginatu</a></li>
+                  <li><a class="dropdown-item" href="#">Nordikoa</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="colecciones.html">Ver todo</a></li>
+                </ul>
+              </li>
+              <li><a href="#footer" id="boton-contacto">Contacto</a></li>
+          </ul>
+      
+          <div class="drawer">
+            <label for="menu-toggle" class="close-btn">
+              <i class="bi bi-x-lg"></i>
             </label>
       
-            <!-- Menú visible en desktop -->
-            <ul class="menu">
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="colecciones.html">Catálogo</a></li>
-                <li><a href="index.html#sobre-mi">Sobre mí</a></li>
-                <li><a href="colecciones.html">Colecciones</a></li>
-                <li><a href="#footer">Contacto</a></li>
-            </ul>
+            <div class="drawer-content">
+              
+              <div class="menu-panel" id="main-menu-panel">
+                <ul class="menu-mobile">
+                  <li><a href="index.html">Inicio</a></li>
+                  <li class="has-submenu">
+                    <a href="#" class="open-submenu-btn" data-target="#catalog-submenu-panel">
+                      <span>Catálogo</span>
+                      <i class="bi bi-chevron-right"></i>
+                    </a>
+                  </li>
+                  <li><a href="#">Sobre mí</a></li>
+                  <li class="has-submenu">
+                    <a href="#" class="open-submenu-btn" data-target="#collections-submenu-panel">
+                      <span>Colecciones</span>
+                      <i class="bi bi-chevron-right"></i>
+                    </a>
+                  </li>
+                  <li><a href="#footer" class="boton-contacto-mobile">Contacto</a></li>
+                </ul>
+              </div>
       
-            <!-- Drawer para mobile -->
-            <div class="drawer">
-              <label for="menu-toggle" class="close-btn">
-                <i class="bi bi-x-lg"></i>
-              </label>
+              <div class="menu-panel" id="catalog-submenu-panel">
+                <div class="submenu-header">
+                  <button class="back-to-main-btn">
+                    <i class="bi bi-chevron-left"></i>
+                    <span>Volver</span>
+                  </button>
+                </div>
+                <ul class="menu-mobile">
+                  <li><a href="#">Pulseras</a></li>
+                  <li><a href="#">Anillos</a></li>
+                  <li><a href="#">Collares</a></li>
+                  <li><a href="#">Pendientes</a></li>
+                  <li><a href="colecciones.html">Ver todo</a></li>
+                </ul>
+              </div>
       
-              <ul class="menu-mobile">
-                <li><a href="#">Catálogo</a></li>
-                <li><a href="#">Sobre mí</a></li>
-                <li><a href="#">Colecciones</a></li>
-                <li><a href="#footer">Contacto</a></li>
-              </ul>
+              <div class="menu-panel" id="collections-submenu-panel">
+                  <div class="submenu-header">
+                    <button class="back-to-main-btn">
+                      <i class="bi bi-chevron-left"></i>
+                      <span>Volver</span>
+                    </button>
+                  </div>
+                  <ul class="menu-mobile">
+                    <li><a href="#">Itsasoa</a></li>
+                    <li><a href="#">Trazua</a></li>
+                    <li><a href="imaginatu.html">Imaginatu</a></li>
+                    <li><a href="#">Nordikoa</a></li>
+                    <li><a href="colecciones.html">Ver todas</a></li>
+                  </ul>
+                </div>
+      
             </div>
+          </div>
         </nav>
     </header>
     
@@ -808,5 +875,43 @@
         filterProducts();
         });
     </script>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+              const mainMenuPanel = document.querySelector('#main-menu-panel');
+              const openSubmenuBtns = document.querySelectorAll('.open-submenu-btn');
+              const backButtons = document.querySelectorAll('.back-to-main-btn');
+          
+              // Añadimos un evento a cada botón que abre un submenú
+              openSubmenuBtns.forEach(button => {
+                button.addEventListener('click', function(event) {
+                  event.preventDefault();
+                  
+                  // Obtenemos el panel al que queremos ir desde el atributo data-target
+                  const targetPanelId = this.getAttribute('data-target');
+                  const targetPanel = document.querySelector(targetPanelId);
+                  
+                  if (targetPanel) {
+                    // El menú principal se va hacia la izquierda
+                    mainMenuPanel.classList.add('is-leaving');
+                    // El submenú objetivo entra desde la derecha
+                    targetPanel.classList.add('is-active');
+                  }
+                });
+              });
+          
+              // Añadimos un evento a todos los botones de "Volver"
+              backButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                  // Encontramos el panel actual en el que está el botón "volver"
+                  const currentPanel = this.closest('.menu-panel');
+                  
+                  // El menú principal vuelve a su sitio
+                  mainMenuPanel.classList.remove('is-leaving');
+                  // El submenú actual se va hacia la derecha
+                  currentPanel.classList.remove('is-active');
+                });
+              });
+            });
+          </script>
 </body>
 </html>
