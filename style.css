@@ -752,7 +752,7 @@ html {
 
 /* 1. Estilo base para cada slide */
 #hero-banner-carousel .carousel-item {
-  height: 50vh;
+  height: 80vh;
   min-height: 500px; /* Altura mínima por si la pantalla es muy ancha y poco alta */
   
   /* Imagen de fondo */
@@ -805,6 +805,7 @@ html {
 #hero-banner-carousel .carousel-caption p {
   font-size: 1.2rem; /* Tamaño del párrafo */
   max-width: 600px;
+  padding-bottom: 16px;
   margin: 1rem auto 0; /* Centra el párrafo */
 }
 
@@ -812,7 +813,7 @@ html {
 /* --- Ajustes para Móviles (Responsive) --- */
 @media (max-width: 768px) {
   #hero-banner-carousel .carousel-item {
-    height: 50vh;
+    height: 70vh;
     min-height: 400px;
   }
   
