@@ -763,19 +763,19 @@ html {
 
 /* 2. Imágenes de fondo a cada slide */
 #slide-imaginatu {
-  background-image: url('../imagenes/hero-images/collar-arabesque.jpg');
+  background-image: url('imagenes/hero-images/collar-arabesque.jpg');
 }
 
 #slide-trazua {
-  background-image: url('../imagenes/hero-images/colgante-cr.jpg');
+  background-image: url('imagenes/hero-images/colgante-cr.jpg');
 }
 
 #slide-itsasoa {
-  background-image: url('../imagenes/hero-images/collar-oskol.jpg');
+  background-image: url('imagenes/hero-images/collar-oskol.jpg');
 }
 
 #slide-nordikoa {
-  background-image: url('../imagenes/hero-images/colgante-tropical.jpg');
+  background-image: url('imagenes/hero-images/colgante-tropical.jpg');
 }
 
 /* 3. Estilos para el texto */
