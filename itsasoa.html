@@ -591,7 +591,7 @@
                 img.addEventListener("click", () => {
                 modalImage.src = img.src;
                 modalName.textContent = img.nextElementSibling.textContent;
-                modalDescription.textContent = "Descripción breve del producto aquí."; // Puedes usar un data-attribute para cada producto
+                modalDescription.textContent = img.dataset.description;
                 modal.show();
                 });
             });
