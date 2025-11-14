@@ -185,30 +185,7 @@
                     </div>
                 </div>
             
-                <!-- <div class="d-flex align-items-center">
-                    <span class="me-2">Filtrar por:</span>
-                    <div class="dropdown">
-                    <button class="btn btn-link dropdown-toggle text-dark text-decoration-none" type="button" data-bs-toggle="dropdown">
-                        Colección
-                    </button>
-                    <ul class="dropdown-menu" id="filterCollection">
-                        <li><a class="dropdown-item" href="#" data-collection="itsasoa">Itsasoa</a></li>
-                        <li><a class="dropdown-item" href="#" data-collection="abstraktua">Abstraktua</a></li>
-                        <li><a class="dropdown-item" href="#" data-collection="trazua">Trazua</a></li>
-                        <li><a class="dropdown-item" href="#" data-collection="imaginatu">Imaginatu</a></li>
-                        <li><a class="dropdown-item" href="#" data-collection="nordikoa">Nordikoa</a></li>
-                        <li><a class="dropdown-item" href="#" data-collection="">Todas</a></li>
-                    </ul>
-                    </div>
                 </div>
-            
-                <div class="d-flex align-items-center">
-                    <label class="me-2">En stock</label>
-                    <div class="form-check form-switch">
-                    <input class="form-check-input" type="checkbox" id="inStockSwitch">
-                    </div>
-                </div> -->
-            </div>
     
             <div id="productList" class="row g-4">                
                 <div class="col-12 col-sm-6 col-md-4 col-lg-3">
@@ -348,7 +325,6 @@
         </div>
         <section id="sobre-mi" class="container-fluid">
             <div class="row align-items-center py-5 g-5">
-              <!-- Texto -->
               <div class="col-lg-7 col-md-12 order-1 order-lg-2 mt-0">
                 <h1 class="title-ink">Sobre mi</h1>
                 <p class="p-sobremi">
@@ -362,7 +338,6 @@
                 </p>
               </div>
           
-              <!-- Imagen -->
               <div class="col-lg-5 col-md-12 text-center order-2 order-lg-1 mt-4 mt-lg-0">
                 <figure class="m-0">
                   <img src="imagenes/JLI_sobremi-conbg.jpg" 
@@ -414,215 +389,30 @@
         </div>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const categoryLinks = document.querySelectorAll("#filterCategory a");
-            const collectionLinks = document.querySelectorAll("#filterCollection a");
-            const inStockSwitch = document.getElementById("inStockSwitch");
-            const products = document.querySelectorAll("#productList .product");
-
-            // --- ¡NUEVO! LEEMOS LOS PARÁMETROS DE LA URL ---
-            const urlParams = new URLSearchParams(window.location.search);
-            
-            // Obtenemos los valores de la URL. 
-            // Si no existen, usamos un string vacío "" o false.
-            let selectedCategory = urlParams.get('categoria') || "";
-            let selectedCollection = urlParams.get('coleccion') || "";
-            let inStockOnly = urlParams.get('stock') === 'true';
-
-            // --- ¡NUEVO! Actualizamos el switch si la URL lo indica ---
-            if (inStockOnly) {
-                inStockSwitch.checked = true;
-            }
-            // (Opcional: podrías añadir lógica para que los dropdowns muestren el filtro activo)
-            
-            // --- FIN DE CAMBIOS INICIALES ---
-
-            // Función para filtrar productos (tu función original no necesita cambios)
-            function filterProducts() {
-                products.forEach(product => {
-                const matchesCategory = selectedCategory === "" || product.dataset.category.includes(selectedCategory);
-                const matchesCollection = selectedCollection === "" || product.dataset.collection === selectedCollection;
-                const matchesStock = !inStockOnly || product.dataset.stock === "true";
-
-                if (matchesCategory && matchesCollection && matchesStock) {
-                    product.parentElement.style.display = "block";
-                } else {
-                    product.parentElement.style.display = "none";
-                }
-                });
-            }
-
-            // Filtrar por categoría (sin cambios)
-            categoryLinks.forEach(link => {
-                link.addEventListener("click", e => {
-                e.preventDefault();
-                selectedCategory = link.dataset.category;
-                filterProducts();
-                });
-            });
-
-            // Filtrar por colección (sin cambios)
-            collectionLinks.forEach(link => {
-                link.addEventListener("click", e => {
-                e.preventDefault();
-                selectedCollection = link.dataset.collection;
-                filterProducts();
-                });
-            });
-
-            // Filtrar por stock (sin cambios)
-            inStockSwitch.addEventListener("change", () => {
-                inStockOnly = inStockSwitch.checked;
-                filterProducts();
-            });
-
-            // Inicializa el filtro al cargar la página.
-            // Esta función AHORA usará los valores que obtuvimos de la URL.
-            filterProducts();
-        });
-    </script>
-    
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const mainMenuPanel = document.querySelector('#main-menu-panel');
-            const openSubmenuBtns = document.querySelectorAll('.open-submenu-btn');
-            const backButtons = document.querySelectorAll('.back-to-main-btn');
+    <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-xl">
+            <div class="modal-content border-0 position-relative">
+                <button type="button" class="btn-close position-absolute top-0 end-0 m-3" data-bs-dismiss="modal" aria-label="Close" style="z-index: 10;">
+                </button>
         
-            // Añadimos un evento a cada botón que abre un submenú
-            openSubmenuBtns.forEach(button => {
-            button.addEventListener('click', function(event) {
-                event.preventDefault();
-                
-                // Obtenemos el panel al que queremos ir desde el atributo data-target
-                const targetPanelId = this.getAttribute('data-target');
-                const targetPanel = document.querySelector(targetPanelId);
-                
-                if (targetPanel) {
-                // El menú principal se va hacia la izquierda
-                mainMenuPanel.classList.add('is-leaving');
-                // El submenú objetivo entra desde la derecha
-                targetPanel.classList.add('is-active');
-                }
-            });
-            });
-        
-            // Añadimos un evento a todos los botones de "Volver"
-            backButtons.forEach(button => {
-            button.addEventListener('click', function() {
-                // Encontramos el panel actual en el que está el botón "volver"
-                const currentPanel = this.closest('.menu-panel');
-                
-                // El menú principal vuelve a su sitio
-                mainMenuPanel.classList.remove('is-leaving');
-                // El submenú actual se va hacia la derecha
-                currentPanel.classList.remove('is-active');
-            });
-            });
-        });
-    </script>
-
-        <!-- Modal de Bootstrap -->
-        <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered modal-xl">
-                <div class="modal-content border-0 position-relative">
-                    <!-- Cruz de cierre -->
-                    <button type="button" class="btn-close position-absolute top-0 end-0 m-3" data-bs-dismiss="modal" aria-label="Close" style="z-index: 10;">
-                    </button>
+                <div class="modal-body d-flex flex-column flex-md-row p-0">
+                    <div class="modal-image flex-shrink-0">
+                        <img src="" id="modalImage" class="img-fluid" alt="">                    
+                    </div>
             
-                    <div class="modal-body d-flex flex-column flex-md-row p-0">
-                        <!-- Imagen a la izquierda -->
-                        <div class="modal-image flex-shrink-0">
-                            <img src="" id="modalImage" class="img-fluid" alt="">                    
-                        </div>
-                
-                        <!-- Panel derecho con fondo blanco -->
-                        <div class="modal-info bg-white d-flex flex-column justify-content-center p-4">
-                            <h2 id="modalName" class="text-dark mb-3"></h2>
-                            <p id="modalDescription" class="text-dark mb-4"></p>
-                            <button id="btnConsultar" class="btn btn-dark">Consultar</button>
-                        </div>
+                    <div class="modal-info bg-white d-flex flex-column justify-content-center p-4">
+                        <h2 id="modalName" class="text-dark mb-3"></h2>
+                        <p id="modalDescription" class="text-dark mb-4"></p>
+                        <button id="btnConsultar" class="btn btn-dark">Consultar</button>
                     </div>
                 </div>
             </div>
         </div>
-      
-        <!-- Script para generar el enlace de WhatsApp -->
-        <script>
-                document.addEventListener("DOMContentLoaded", () => {
-                const btnConsultar = document.getElementById("btnConsultar");
-        
-                btnConsultar.addEventListener("click", () => {
-                const nombreProducto = document.getElementById("modalName").textContent.trim();
-                const numero = "5493487531836"; // tu número sin + ni espacios
-                const mensaje = `Hola, quiero consultar por ${nombreProducto}`;
-                const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensaje)}`;
-            
-                window.open(url, "_blank");
-                });
-            });
-        </script>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="main.js"></script>
+    <script src="catalogo.js"></script>
     
-    
-        <script>
-            document.addEventListener("DOMContentLoaded", () => {
-            const products = document.querySelectorAll("#productList .product img");
-            const modal = new bootstrap.Modal(document.getElementById('imageModal'));
-            const modalImage = document.getElementById('modalImage');
-            const modalName = document.getElementById('modalName');
-            const modalDescription = document.getElementById('modalDescription');
-            
-            products.forEach(img => {
-                img.style.cursor = "pointer";
-                img.addEventListener("click", () => {
-                modalImage.src = img.src;
-                modalName.textContent = img.nextElementSibling.textContent;
-                modalDescription.textContent = img.dataset.description;
-                modal.show();
-                });
-            });
-            });
-        </script>
-        <script>
-            document.addEventListener('DOMContentLoaded', function() {
-            const mainMenuPanel = document.querySelector('#main-menu-panel');
-            const openSubmenuBtns = document.querySelectorAll('.open-submenu-btn');
-            const backButtons = document.querySelectorAll('.back-to-main-btn');
-        
-            // Añadimos un evento a cada botón que abre un submenú
-            openSubmenuBtns.forEach(button => {
-            button.addEventListener('click', function(event) {
-                event.preventDefault();
-                
-                // Obtenemos el panel al que queremos ir desde el atributo data-target
-                const targetPanelId = this.getAttribute('data-target');
-                const targetPanel = document.querySelector(targetPanelId);
-                
-                if (targetPanel) {
-                // El menú principal se va hacia la izquierda
-                mainMenuPanel.classList.add('is-leaving');
-                // El submenú objetivo entra desde la derecha
-                targetPanel.classList.add('is-active');
-                }
-            });
-            });
-        
-            // Añadimos un evento a todos los botones de "Volver"
-            backButtons.forEach(button => {
-            button.addEventListener('click', function() {
-                // Encontramos el panel actual en el que está el botón "volver"
-                const currentPanel = this.closest('.menu-panel');
-                
-                // El menú principal vuelve a su sitio
-                mainMenuPanel.classList.remove('is-leaving');
-                // El submenú actual se va hacia la derecha
-                currentPanel.classList.remove('is-active');
-            });
-            });
-        });
-        </script>
-    </body>
 </body>
 </html>

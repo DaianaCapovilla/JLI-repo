@@ -277,7 +277,7 @@ html {
   
 /* === GLASS EFFECT === */
 .glass-effect {
-    background: rgba(13, 14, 16, 0.20);
+    background: rgba(13, 14, 16, 0.60);
     border-radius: clamp(16px, 4vw, 32px); 
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(6px);
@@ -293,17 +293,56 @@ html {
     display: block;
     max-width: 100%;
     height: auto;
-    width: clamp(350px, 30vw, 400px);
+    width: clamp(300px, 30vw, 400px);
     object-fit: contain;
   }
+
+  .div-textobanner-jli {
+    margin-top: 64px;
+  }
+
+  .p-JLI {
+    color: var(--Gray-1, #F8FAFA);
+    text-align: center;
+    font-family: "Plus Jakarta Sans";
+    font-size: clamp(1rem, 2.5vw, 1.125rem);
+    font-style: normal;
+    font-weight: 200;
+    line-height: normal;
+    letter-spacing: 0.0625rem;
+    text-transform: uppercase;
+  }
   
-  .h1-JLI {
+  .span-jli {
+    color: var(--Gray-1, #F8FAFA);
+    font-family: "Plus Jakarta Sans";
+    font-size: 1.125rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: 0.0625rem;
+    text-transform: uppercase;
+  }
+
+  /* .h1-JLI {
     font-size: clamp(1.2rem, 5vw, 2.125rem);
     font-weight: 700;
     color: #F8FAFA;
+  } */
+
+  .h1-JLI {
+    color: #F8FAFA;
+    text-align: center;
+    font-family: "Plus Jakarta Sans";
+    font-size: clamp(1.2rem, 5vw, 2.5rem);
+    font-style: normal;
+    font-weight: 200;
+    line-height: normal;
+    letter-spacing: 1px;
+    text-transform: uppercase;
   }
   
-  .btn-JLI-secondary {
+  /* .btn-JLI-secondary {
     display: inline-block;
     background-color: #F8FAFA;
     color: #0D0E10;
@@ -317,10 +356,30 @@ html {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
     border: none;
     cursor: pointer;
+  } */
+
+  .btn-JLI-secondary {
+    display: inline-block;
+    background-color: #0D0E10;
+    color: #F8FAFA;
+    text-decoration: none;
+    font-size: 1rem;
+    text-transform: uppercase;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    letter-spacing: 0.0625rem;
+    padding: 1rem 2rem;
+    margin-top: 16px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    border: 1px solid #FFFFFF;
+    cursor: pointer;
   }
   
   .btn-JLI-secondary:hover {
-    background-color: #e6e6e6;
+    background-color: #F8FAFA;
+    color: #0D0E10;
 }
 
 /* CATALOGO *
@@ -831,4 +890,26 @@ html {
   #hero-banner-carousel .carousel-caption p {
     font-size: 1rem; /* Párrafo más pequeño en móvil */
   }
+}
+
+/* CSS PARA EL QIAF  */
+
+.qiaf-jli {
+  background-color: #0D0E10;
+}
+
+.subtitle-qiaf {
+  font-family: "Plus Jakarta Sans";
+  font-size: 1rem;
+  color: #F8FAFA;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.h1-qiaf {
+  color: #F8FAFA;
+}
+
+.p-qiaf {
+  color: #F8FAFA;
 }
