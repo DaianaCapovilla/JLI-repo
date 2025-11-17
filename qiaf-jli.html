@@ -6,16 +6,12 @@
   <meta name="description" content="José Luis Ibar, diseñador de joyas únicas, donde el diseño se une con la sobriedad y la modernidad para dar vida a piezas irrepetibles.">
   <title>José Luis Ibar | Jewels Design</title>
 
-  <!-- Open Graph  -->
   <meta property="og:title" content="José Luis Ibar - Inicio">
   <meta property="og:description" content="Desde hace más de veinte años creando de joyas únicas, donde el diseño se une con la sobriedad y la modernidad para dar vida a piezas irrepetibles.">
   <meta property="og:image" content="imagenes/thumbnail.jpg">
   <meta property="og:image:alt" content="José Luis Ibar - Jewels Design">
 
   <meta name="robots" content="index, follow">
-  <!-- <meta name="theme-color" content="#09f"> -->
-
-
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
   <link rel="stylesheet" href="style.css">
@@ -97,7 +93,7 @@
               <li><a href="catalogo.html?categoria=anillos">Anillos</a></li>
               <li><a href="catalogo.html?categoria=collares">Collares</a></li>
               <li><a href="catalogo.html?categoria=pendientes">Pendientes</a></li>
-              <li><a href="colecciones.html">Ver todo</a></li>
+              <li><a href="catalogo.html">Ver todo</a></li>
             </ul>
           </div>
   
@@ -136,7 +132,6 @@
   
       <section id="sobre-mi" class="container-fluid">
         <div class="row align-items-center py-5 g-5">
-          <!-- Texto -->
           <div class="col-lg-7 col-md-12 order-1 order-lg-2 mt-0">
             <h1 class="title-ink">Sobre mi</h1>
             <p class="p-sobremi">
@@ -150,10 +145,9 @@
             </p>
           </div>
       
-          <!-- Imagen -->
           <div class="col-lg-5 col-md-12 text-center order-2 order-lg-1 mt-4 mt-lg-0">
             <figure class="m-0">
-              <img src="imagenes/JLI_sobremi-conbg.jpg" 
+              <img src="imagenes/jli_sobremi-conbg.webp" 
                    class="img-fluid img-sobremi" 
                    alt="José Luis Ibar, Diseñador de Joyas">
             </figure>
@@ -164,16 +158,12 @@
 
     </main>
 
-    <!--Inicio boton WhatsApp-->
     <a href="https://wa.me/5493487531836?text=Hola,%20quiero%20más%20información" class="whatsapp-float" target="_blank" rel="noopener noreferrer">
       <i class="bi bi-whatsapp"></i>
     </a>
-    <!--Fin boton WhatsApp-->
-
     <footer id="footer">
         <div class="glass-effect-footer mx-auto d-flex flex-column flex-md-row align-items-center justify-content-between gap-4">
           
-          <!-- Información de contacto -->
           <div class="col-12 col-md-6 mb-4 mb-md-0">
             <h1 class="contacto-title">Contacto</h1>
             <p>Si querés conocer más sobre mi trabajo, adquirir una pieza o invitarme a participar en una exposición, podés encontrarme en:</p>
@@ -199,7 +189,6 @@
             </ul>
           </div>
     
-          <!-- Logo -->
           <a href="index.html" class="d-flex justify-content-center justify-content-md-between mb-4 mb-md-0">
             <img src="imagenes/joseluisibar-logo.png" alt="Logo José Luis Ibar" class="hero-logo">
           </a>
@@ -208,43 +197,8 @@
     </footer>
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        const mainMenuPanel = document.querySelector('#main-menu-panel');
-        const openSubmenuBtns = document.querySelectorAll('.open-submenu-btn');
-        const backButtons = document.querySelectorAll('.back-to-main-btn');
-    
-        // Añadimos un evento a cada botón que abre un submenú
-        openSubmenuBtns.forEach(button => {
-          button.addEventListener('click', function(event) {
-            event.preventDefault();
-            
-            // Obtenemos el panel al que queremos ir desde el atributo data-target
-            const targetPanelId = this.getAttribute('data-target');
-            const targetPanel = document.querySelector(targetPanelId);
-            
-            if (targetPanel) {
-              // El menú principal se va hacia la izquierda
-              mainMenuPanel.classList.add('is-leaving');
-              // El submenú objetivo entra desde la derecha
-              targetPanel.classList.add('is-active');
-            }
-          });
-        });
-    
-        // Añadimos un evento a todos los botones de "Volver"
-        backButtons.forEach(button => {
-          button.addEventListener('click', function() {
-            // Encontramos el panel actual en el que está el botón "volver"
-            const currentPanel = this.closest('.menu-panel');
-            
-            // El menú principal vuelve a su sitio
-            mainMenuPanel.classList.remove('is-leaving');
-            // El submenú actual se va hacia la derecha
-            currentPanel.classList.remove('is-active');
-          });
-        });
-      });
-    </script>
+    <script src="main.js"></script>
+    <script src="catalogo.js"></script>
+
 </body>
 </html>

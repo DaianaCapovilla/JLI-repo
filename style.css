@@ -627,7 +627,7 @@ html {
 
 /* Footer */
 #footer {
-  background-image: url(imagenes/hero-images/collar-tide.jpg);
+  background-image: url(imagenes/hero-images/collar-tide.webp);
   background-size: cover;
   background-position: center;
   color: #F8FAFA;          
@@ -822,19 +822,19 @@ html {
 
 /* 2. Imágenes de fondo a cada slide */
 #slide-imaginatu {
-  background-image: url('imagenes/hero-images/collar-arabesque.jpg');
+  background-image: url('imagenes/hero-images/collar-arabesque.webp');
 }
 
 #slide-trazua {
-  background-image: url('imagenes/hero-images/colgante-cr.jpg');
+  background-image: url('imagenes/hero-images/colgante-cr.webp');
 }
 
 #slide-itsasoa {
-  background-image: url('imagenes/hero-images/collar-oskol.jpg');
+  background-image: url('imagenes/hero-images/collar-oskol.webp');
 }
 
 #slide-nordikoa {
-  background-image: url('imagenes/hero-images/colgante-tropical.jpg');
+  background-image: url('imagenes/hero-images/colgante-tropical.webp');
 }
 
 /* 3. Estilos para el texto */
