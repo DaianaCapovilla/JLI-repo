@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
 
 @font-face {
-    font-family: 'Inkburro'; /* Nombre que usarás en CSS */
+    font-family: 'Inkburro';
     src: url('fonts/Inkburro.TTF') format('truetype');
     font-weight: normal;
     font-style: normal;
@@ -12,8 +12,6 @@
     padding: 0;
     box-sizing: border-box; 
     font-family: 'Plus Jakarta Sans', sans-serif;
-    /* outline: 1px solid red;  */
-    /* debug */
 }
 
 html {
@@ -85,7 +83,7 @@ html {
   display: none;
 }
 
-/* ===== 📱 Responsive ===== */
+/* ===== 📱 Responsive Navbar ===== */
 @media (max-width: 768px) {
   .navbar {
     justify-content: flex-end;
@@ -208,35 +206,31 @@ html {
   /* ===== ESTILOS PARA EL DRAWER DESLIZANTE ===== */
 
   .drawer-content {
-    position: relative; /* Contenedor para los paneles posicionados */
-    flex-grow: 1;     /* Asegura que ocupe todo el alto del drawer */
-    overflow: hidden;   /* Oculta los paneles que están fuera de la pantalla */
+    position: relative;
+    flex-grow: 1;
+    overflow: hidden;
   }
 
   .menu-panel {
-    position: absolute; /* Apila los paneles uno sobre otro */
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: #F8FAFA; /* Fondo para que no se transparente */
-    
-    /* Por defecto, todos los paneles están fuera de la pantalla (a la derecha) */
+    background-color: #F8FAFA;
     transform: translateX(100%); 
     transition: transform 0.4s ease;
   }
 
-  /* El menú principal es visible por defecto */
   #main-menu-panel {
     transform: translateX(0);
   }
 
-  /* Clases para controlar las animaciones */
   .menu-panel.is-active {
-    transform: translateX(0); /* Desliza el panel para que sea visible */
+    transform: translateX(0);
   }
   .menu-panel.is-leaving {
-    transform: translateX(-100%); /* Desliza el panel hacia la izquierda para ocultarlo */
+    transform: translateX(-100%);
   }
 }
 
@@ -263,7 +257,7 @@ html {
     width: 100%;
   }
   
-/* === CAPA SUPERIOR (CONTENIDO CON GLASS) === */
+/* === CAPA SUPERIOR === */
 .hero-overlay {
     position: absolute;
     inset: 0;
@@ -324,12 +318,6 @@ html {
     text-transform: uppercase;
   }
 
-  /* .h1-JLI {
-    font-size: clamp(1.2rem, 5vw, 2.125rem);
-    font-weight: 700;
-    color: #F8FAFA;
-  } */
-
   .h1-JLI {
     color: #F8FAFA;
     text-align: center;
@@ -341,22 +329,6 @@ html {
     letter-spacing: 1px;
     text-transform: uppercase;
   }
-  
-  /* .btn-JLI-secondary {
-    display: inline-block;
-    background-color: #F8FAFA;
-    color: #0D0E10;
-    border-radius: 100px;
-    text-decoration: none;
-    font-size: clamp(1rem, 2.5vw, 1.125rem);
-    font-weight: 600;
-    padding: 12px 24px;
-    margin-top: 16px;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
-    border: none;
-    cursor: pointer;
-  } */
 
   .btn-JLI-secondary {
     display: inline-block;
@@ -382,91 +354,27 @@ html {
     color: #0D0E10;
 }
 
-/* CATALOGO *
 
-/* #catalogo {
-    padding-left: 80px;
-    padding-top: 100px;
-    padding-bottom: 100px;
-    background-color: #F8FAFA;
-}
-
-.p-catalogo-JLI {
-    color: #282728;
-    font-family: "Plus Jakarta Sans";
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-}
-
-.JLI-list-item {
-    color: #0D0E10;
-    list-style: none;
-    font-family: "Plus Jakarta Sans";
-    font-size: 18px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-}
-
-#catalogoTabs .nav-link {
-    color: #4F5052;
-    transition: color 0.3s;
-    position: relative;
-    padding-left: 24px; 
-}
-
-#catalogoTabs .nav-link.active {
-    color: #282728;
-    font-weight: 500;
-}
-
-#catalogoTabs .nav-link.active::before {
-    content: "•";               
-    position: absolute;
-    left: 0;                    
-    top: 50%;
-    transform: translateY(-50%); 
-    color: #282728;            
-    font-size: 18px;            
-    font-weight: 500;
-}
-
-#catalogoTabs .nav-link:not(.active):hover {
-    color: #282728;
-    font-weight: 500;
-}
-
-.carousel-row {
-    display: flex;
-    flex-wrap: nowrap; 
-    justify-content: flex-start;
-    gap: 24px;
-}
-
-.carousel-control-prev,
-.carousel-control-next {
-    top: calc(50% - 20px); 
-    transform: translateY(-50%);  bottom: auto;            
-    height: 40px;             
-    width: 40px;              
-}
-
-.carousel-control-prev-icon,
-.carousel-control-next-icon {
-  background-color: black;       
-  width: 40px;                 
-  height: 40px;                  
-  background-size: 50% 50%;    
-  background-position: center;  
-  background-repeat: no-repeat;  
-} */
+/* ==========================================
+   SECCIÓN CATALOGO
+   ========================================== */
 
 #catalogo-JLI {
-  padding: 64px 80px;
+  padding: 64px 80px; 
   background-color: #F8FAFA;
   text-align: center;
+}
+
+@media (max-width: 992px) {
+  #catalogo-JLI {
+    padding: 64px 32px;
+  }
+}
+
+@media (max-width: 768px) {
+  #catalogo-JLI {
+    padding: 64px 24px;
+  }
 }
 
 .img-tab-JLI {
@@ -486,14 +394,30 @@ html {
     text-transform: uppercase;
 }
 
+/* ==========================================
+   SECCIÓN SOBRE MI
+   ========================================== */
+
 #sobre-mi {
     padding: 100px 80px;
 }
 
+@media (max-width: 992px) {
+    #sobre-mi {
+      padding: 64px 32px 0px 32px;
+    }
+}
+  
+@media (max-width: 768px) {
+    #sobre-mi {
+      padding: 64px 24px 0 24px;
+    }
+}
+
 .title-ink {
   font-family: 'Inkburro', 'Plus Jakarta Sans', sans-serif;
-  font-size: clamp(32px, 8vw, 80px);
-  margin-bottom: 0px;
+  font-size: clamp(40px, 8vw, 80px);
+  margin-bottom: 16px;
   color: #4F5052;
 }
 
@@ -503,8 +427,24 @@ html {
   color: #282728;
 }
 
+/* ==========================================
+   SECCIÓN IMAGINATU
+   ========================================== */
+
 #coleccionImaginatu {
-  padding: 80px;
+  padding: 80px; /* Desktop */
+}
+
+@media (max-width: 992px) {
+    #coleccionImaginatu {
+      padding: 64px 32px 0px 32px; 
+    }
+}
+
+@media (max-width: 768px) {
+    #coleccionImaginatu {
+      padding: 64px 24px 0px 24px; 
+    }
 }
 
 .p-imaginatu {
@@ -530,6 +470,8 @@ html {
     font-weight: 500;
     text-decoration: underline;
 }
+
+/* ========================================== */
 
 #coleccionAbstraktua {
     padding: 100px 0px;
@@ -565,63 +507,92 @@ html {
     cursor: pointer;
 }
 
+/* ==========================================
+   SECCIÓN COLECCIONES (MODIFICADO PARA MOBILE)
+   ========================================== */
+
 #colecciones {
-    padding: 100px 80px;
-  }
+    padding: 80px;
+}
+
+/* Tablet */
+@media (max-width: 992px) {
+    #colecciones {
+      padding: 64px 32px;
+    }
+}
   
-  .row-colecciones {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 64px;
-    padding-top: 56px;
-  }
+/* Mobile */
+@media (max-width: 768px) {
+    #colecciones {
+      padding: 64px 24px;
+    }
+    
+    /* CORRECCIÓN: Forzamos a que la grilla sea flexible en mobile 
+       para que no rompa el padding de 24px */
+    .row-colecciones {
+       grid-template-columns: 1fr !important;
+       gap: 32px !important;
+    }
+}
   
-  .colecciones-title {
-    font-family: "Plus Jakarta Sans";
-    font-size: clamp(2rem, 5vw, 3rem);
-    font-style: normal;
-    font-weight: 200;
-    line-height: normal;
-  }
+.row-colecciones {
+  display: grid;
+  /* minmax(280px, 1fr) es lo que causaba el desborde en pantallas pequeñas.
+     El !important de arriba lo corrige en mobile.
+  */
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 64px;
+  padding-top: 56px;
+}
   
-  .img-wrapper {
-    position: relative;
-    width: 100%;
-    aspect-ratio: 3 / 4;
-    overflow: hidden;
-  }
+.colecciones-title {
+  font-family: "Plus Jakarta Sans";
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-style: normal;
+  font-weight: 200;
+  line-height: normal;
+  /* margin-bottom: 48px; */
+}
   
-  .img-wrapper img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-  }
+.img-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+}
   
-  /* Borde interno */
-  .img-wrapper::after {
-    content: "";
-    position: absolute;
-    top: 32px;
-    left: 32px;
-    right: 32px;
-    bottom: 32px;
-    border: 1px solid #F8FAFA;
-    pointer-events: none;
-  }
+.img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+  
+/* Borde interno */
+.img-wrapper::after {
+  content: "";
+  position: absolute;
+  top: 32px;
+  left: 32px;
+  right: 32px;
+  bottom: 32px;
+  border: 1px solid #F8FAFA;
+  pointer-events: none;
+}
   
 
-  .h2-colecciones-title {
-    margin-top: 24px;
-    color: #0D0E10;
-    font-family: 'Inkburro', 'Plus Jakarta Sans', sans-serif;
-    font-size: 48px;
-  }
+.h2-colecciones-title {
+  margin-top: 24px;
+  color: #0D0E10;
+  font-family: 'Inkburro', 'Plus Jakarta Sans', sans-serif;
+  font-size: 48px;
+}
   
-  figcaption p {
-    font-size: 16px;
-    margin-bottom: 16px;
-  }
+figcaption p {
+  font-size: 16px;
+  margin-bottom: 16px;
+}
   
 
 
@@ -670,8 +641,8 @@ html {
   text-decoration: none;
   color: #F8FAFA;
   font-family: "Plus Jakarta Sans";
-  font-size: 20px;
-  font-weight: 600;
+  font-size: 16px;
+  font-weight: 400;
   line-height: normal;
 }
 
@@ -716,10 +687,27 @@ html {
   }
   
 /* CSS DE COLECCIONES - Filtro */
+/* CSS DE COLECCIONES - Filtro Modificado */
 
 .contenedor-filtro {
-  padding: 80px;
+  padding: 100px 80px; /* Igual que #sobre-mi en Desktop */
   margin: 0px;
+}
+
+/* Tablet (igual que #sobre-mi) */
+@media (max-width: 992px) {
+  .contenedor-filtro {
+    /* Top: 64px, Laterales: 32px, Bottom: 64px (para que no se corten los productos abajo) */
+    padding: 64px 32px 64px 32px; 
+  }
+}
+
+/* Mobile (igual que #sobre-mi) */
+@media (max-width: 768px) {
+  .contenedor-filtro {
+    /* Top: 64px, Laterales: 24px, Bottom: 64px */
+    padding: 64px 24px 64px 24px;
+  }
 }
 
 /* Tarjetas de producto */

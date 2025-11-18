@@ -92,7 +92,9 @@ document.addEventListener("DOMContentLoaded", () => {
             const nombreProducto = document.getElementById("modalName").textContent.trim();
             const numero = "5493487531836";
             const mensaje = `Hola, quiero consultar por ${nombreProducto}`;
-            const url = `https.wa.me/${numero}?text=${encodeURIComponent(mensaje)}`;
+            
+            // CORRECCIÓN: Cambié "https." por "https://"
+            const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensaje)}`;
         
             window.open(url, "_blank");
         });
