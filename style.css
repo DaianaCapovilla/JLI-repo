@@ -47,7 +47,7 @@ html {
   text-decoration: none;
   font-weight: 500;
   padding: 8px 16px;
-  border-radius: 30px;
+  /* border-radius: 30px; */
   transition: all 0.3s ease;
 }
 
@@ -293,22 +293,24 @@ html {
   }
 
   .div-textobanner-jli {
-    margin-top: 64px;
+    margin-top: 48px;
   }
 
   .p-JLI {
     color: var(--Gray-1, #F8FAFA);
     text-align: center;
     font-family: "Plus Jakarta Sans";
-    font-size: clamp(1rem, 2.5vw, 1.125rem);
+    font-size: clamp(1rem, 2.5vw, 1rem);
     font-style: normal;
     font-weight: 200;
     line-height: normal;
     letter-spacing: 0.0625rem;
-    text-transform: uppercase;
+    margin-bottom: 0px;
+    /* text-transform: lowercase; */
+    /* text-transform: uppercase; */
   }
   
-  .span-jli {
+  /* .span-jli {
     color: var(--Gray-1, #F8FAFA);
     font-family: "Plus Jakarta Sans";
     font-size: 1.125rem;
@@ -317,7 +319,7 @@ html {
     line-height: normal;
     letter-spacing: 0.0625rem;
     text-transform: uppercase;
-  }
+  } */
 
   .h1-JLI {
     color: #F8FAFA;
@@ -328,7 +330,10 @@ html {
     font-weight: 200;
     line-height: normal;
     letter-spacing: 1px;
-    text-transform: uppercase;
+    margin-bottom: 0px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    /* text-transform: uppercase; */
   }
 
   .btn-JLI-secondary {
