@@ -308,6 +308,26 @@ html {
     margin-bottom: 0px;
   }
 
+  .p-JLI .separador {
+    display: none; /* Oculta el "|" en mobile */
+  }
+
+  .p-JLI .horario {
+    display: block; /* Obliga al texto a bajar a una nueva línea */
+    margin-top: 5px; /* Opcional: un pequeño espacio entre líneas */
+  }
+
+  @media (min-width: 768px) {
+    .p-JLI .separador {
+      display: inline; /* Muestra el "|" de nuevo */
+      margin: 0 5px;   /* Espaciado horizontal para la barra */
+    }
+  
+    .p-JLI .horario {
+      display: inline; /* Vuelve a poner el texto en la misma línea */
+    }
+  }
+
 
   .h1-JLI {
     color: #F8FAFA;
