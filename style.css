@@ -306,20 +306,8 @@ html {
     line-height: normal;
     letter-spacing: 0.0625rem;
     margin-bottom: 0px;
-    /* text-transform: lowercase; */
-    /* text-transform: uppercase; */
   }
-  
-  /* .span-jli {
-    color: var(--Gray-1, #F8FAFA);
-    font-family: "Plus Jakarta Sans";
-    font-size: 1.125rem;
-    font-style: normal;
-    font-weight: 500;
-    line-height: normal;
-    letter-spacing: 0.0625rem;
-    text-transform: uppercase;
-  } */
+
 
   .h1-JLI {
     color: #F8FAFA;
@@ -333,7 +321,6 @@ html {
     margin-bottom: 0px;
     padding-top: 16px;
     padding-bottom: 16px;
-    /* text-transform: uppercase; */
   }
 
   .btn-JLI-secondary {
